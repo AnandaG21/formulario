@@ -2,8 +2,8 @@ import express from 'express';
 import http from 'http';
 
 const app = express();
-const baseUrl = "https://formulario-pi-red.vercel.app/?vercelToolbarCode=hsPtdITVr-0-4GU"
-
+const host = 'localhost';
+const porta = 3000;
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/formulario', (req, res) => {
@@ -156,6 +156,7 @@ app.post('/submit', (req, res) => {
         <p><strong>Celular:</strong> ${Celular}</p>
     `);
 });
+export default app;
 const servidor = http.createServer(app);
 servidor.listen(porta, host, () => {
     console.log('Servidor escutando em http://' + host + ":" + porta);
