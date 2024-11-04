@@ -6,7 +6,7 @@ const host = 'localhost';
 const porta = 3000;
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/formulario', (req, res) => {
+app.get('/', (req, res) => {
     res.send(`
     <!DOCTYPE html>
     <html lang="pt-BR">
